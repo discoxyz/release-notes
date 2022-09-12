@@ -17,7 +17,7 @@ jobs:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
       with:
         source_file: 'changelog.md'
-        destination_repo: 'discoxyz/docs'
+        destination_repo: 'discoxyz/disco-docs'
         destination_folder: 'changelog'
         user_name: probablynothingdevops
         user_email: devops@disco.xyz
