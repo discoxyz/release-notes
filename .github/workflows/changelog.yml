@@ -1,0 +1,24 @@
+# This is a basic workflow to help you get started with Actions
+
+name: copy changelog to docs
+
+on: push
+
+jobs:
+  copy-file:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Pushes test file
+      uses: dmnemec/copy_file_to_another_repo_action@main
+      env:
+        API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+      with:
+        source_file: 'changelog.md'
+        destination_repo: 'discoxyz/docs'
+        destination_folder: 'changelog'
+        user_name: probablynothingdevops
+        user_email: devops@disco.xyz
+        commit_message: 'Copying latest version of changelog'
